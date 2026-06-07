@@ -1,4 +1,5 @@
-# FocusTube
+# FocusTube <img width="25" height="25" alt="image" src="https://github.com/user-attachments/assets/20f720e6-12b6-46d8-9163-50c3589f06cc" />
+
 
 Are you someone who studies from YouTube but often ends up getting distracted by recommended videos, trending content, Shorts, food vlogs, movie clips, or other entertainment suggestions?
 
