@@ -1,0 +1,12 @@
+{
+    "name": "Focus-Tube",
+    "version": "1.0.0",
+    "description": "A Chrome extension that helps users stay focused while watching YouTube videos for studying by blocking distracting elements and providing a minimalist interface.",
+    "manifest_version": 3,
+    "author": "Impana T",
+    "action":{
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    }
+
+}
