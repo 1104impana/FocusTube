@@ -1,18 +1,23 @@
+*{
+    font-family: Noto Sans, sans-serif;
+}
 body{
     width:300px;
 
     background:#141516;
     color:white;
 
-    padding:18px;
+    padding:10px;
 
-    font-family:'Segoe UI',sans-serif;
+     
 }
 
 .top-bar{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    margin-top: 0px;
+    font-family: Verdana, sans-serif;
 }
 
 #themeBtn{
@@ -48,6 +53,7 @@ body.light #themeBtn{
     color:#6b7280;
     margin-top:-8px;
     margin-bottom:20px;
+    font-family: Verdana, sans-serif
 }
 
 .tabs{
@@ -69,8 +75,8 @@ body.light #themeBtn{
 }
 
 .tab.active{
-    color:#ef4444;
-    border-bottom:2px solid #ef4444;
+    color:#f32121;
+    border-bottom:2px solid #f32121;
 }
 
 .interest-header{
@@ -85,11 +91,11 @@ body.light #themeBtn{
     padding:7px 14px;
 
     border-radius:20px;
-
-    background:#ff2b2b;
+    border:#f32121 solid 1px;
+    background:#ff2b2b00;
     color:white;
 
-    font-size:13px;
+    font-size:12px;
     font-weight:500;
 }
 
@@ -97,7 +103,7 @@ body.light #themeBtn{
     width:30px;
     height:30px;
 
-    border:rgb(255, 0, 0) solid 1px;
+    border:#f32121 solid 1px;
     border-radius:50%;
 
     background:transparent;
@@ -144,7 +150,7 @@ body.light #themeBtn{
     font-size:13px;
 } 
 #interestInput:focus{
-    border-bottom:1px solid #ef4444;
+    border-bottom:1px solid #f32121;
 }
 #interestInput::placeholder{
     color:#6b7280;
@@ -154,7 +160,7 @@ body.light #themeBtn{
     background:none;
     border:none;
 
-    color:#ef4444;
+    color:#f32121;
 
     cursor:pointer;
 
