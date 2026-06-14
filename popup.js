@@ -10,6 +10,51 @@ editBtn.addEventListener("click", () => {
     input.focus();
 });
 
+
+function createChip(interest){
+
+    const chip = document.createElement("span");
+
+    chip.classList.add("chip");
+
+    chip.innerHTML = `
+        ${interest}
+        <span class="delete-chip">×</span>
+    `;
+
+    const deleteBtn =
+        chip.querySelector(".delete-chip");
+
+    deleteBtn.addEventListener("click", () => {
+
+        chrome.storage.local.get(
+            ["interests"],
+            (result) => {
+
+                let interests =
+                    result.interests || [];
+
+                interests =
+                    interests.filter(
+                        item =>
+                        item !== interest.toLowerCase()
+                    );
+
+                chrome.storage.local.set({
+                    interests: interests
+                });
+
+                chip.remove();
+            }
+        );
+
+    });
+
+    container.appendChild(chip);
+}
+
+
+
 function addInterest() {
 
     const value = input.value.trim();
@@ -18,15 +63,30 @@ function addInterest() {
 
     const chip = document.createElement("span");
 
-    chip.classList.add("chip");
-    chip.innerText = value;
-
+    createChip(value);
     container.appendChild(chip);
+
+    chrome.storage.local.get(["interests"],(result)=>{
+
+        const interests = result.interests||[];
+
+       const newInterests = value.toLowerCase();
+       if(!interests.includes(newInterests)){
+        interests.push(newInterests);
+       }
+
+        chrome.storage.local.set({
+            interests: interests
+        });
+
+        console.log("Saved:", interests);
+    });
 
     input.value = "";
 
     // Hide input and save button
     editor.style.display = "none";
+    container.classList.remove("editing");
 }
 
 saveBtn.addEventListener("click", addInterest);
@@ -66,4 +126,24 @@ tabs.forEach(tab => {
 
         tab.classList.add("active");
     });
+});
+
+chrome.storage.local.get(["interests"], (result) => {
+
+    const interests = result.interests || [];
+
+    interests.forEach((interest) => {
+    createChip(interest);
+});
+
+});
+
+editBtn.addEventListener("click", () => {
+
+    editor.style.display = "flex";
+
+    container.classList.toggle("editing");
+
+    input.focus();
+
 });

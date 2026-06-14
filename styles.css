@@ -100,16 +100,31 @@ body.light #themeBtn{
 }
 
 #editBtn{
-    width:30px;
-    height:30px;
+    width:32px;
+    height:32px;
 
-    border:#f32121 solid 1px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #fa0000;
     border-radius:50%;
 
     background:transparent;
-    color:rgb(85, 82, 82);
+    color:#ff0000;
 
     cursor:pointer;
+
+    transition:0.2s;
+}
+
+#editBtn:hover{
+    background:#3b393949;
+    color:white;
+}
+
+#editBtn .material-icons{
+    font-size:18px;
 }
 
 #editor{
@@ -226,4 +241,18 @@ input:checked + .slider:before{
     font-size:12px;
 
     margin-top:8px;
+}
+
+.delete-chip{
+    display:none;
+    margin-left:8px;
+    cursor:pointer;
+}
+
+.editing .delete-chip{
+    display:inline;
+}
+
+.delete-chip:hover{
+    opacity:1;
 }
