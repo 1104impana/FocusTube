@@ -6,8 +6,13 @@ const container = document.getElementById("interestContainer");
 const input = document.getElementById("interestInput");
 
 editBtn.addEventListener("click", () => {
-    editor.style.display = "block";
+
+    editor.style.display = "flex";
+
+    container.classList.toggle("editing");
+
     input.focus();
+
 });
 
 
@@ -61,10 +66,7 @@ function addInterest() {
 
     if (value === "") return;
 
-    const chip = document.createElement("span");
-
     createChip(value);
-    container.appendChild(chip);
 
     chrome.storage.local.get(["interests"],(result)=>{
 
@@ -103,17 +105,44 @@ const focusToggle = document.getElementById("focusToggle");
 const status = document.getElementById("status");
 
 focusToggle.addEventListener("change", () => {
-    if(focusToggle.checked){
-        status.innerHTML="● Active";
-        status.style.color="#ef4444";
 
-    }
-    else{
-        status.innerHTML="● Inactive";
-        status.style.color="gray";
-    }
+    const enabled = focusToggle.checked;
+
+    chrome.storage.local.set({
+
+        focusEnabled: enabled
+
+    }, () => {
+
+        status.innerHTML =
+            enabled ? "● Active" : "● Inactive";
+
+        status.style.color =
+            enabled ? "#ef4444" : "gray";
+
+        chrome.tabs.query(
+            {
+                active: true,
+                currentWindow: true
+            },
+            (tabs) => {
+
+                if(
+    tabs.length &&
+    tabs[0].url &&
+    tabs[0].url.includes("youtube.com")
+){
+
+                    chrome.tabs.reload(tabs[0].id);
+
+                }
+
+            }
+        );
+
+    });
+
 });
-
 //focus and checklist
 const tabs = document.querySelectorAll(".tab");
 
@@ -138,12 +167,19 @@ chrome.storage.local.get(["interests"], (result) => {
 
 });
 
-editBtn.addEventListener("click", () => {
+chrome.storage.local.get(
+    ["focusEnabled"],
+    (result) => {
 
-    editor.style.display = "flex";
+        const enabled =
+            result.focusEnabled || false;
 
-    container.classList.toggle("editing");
+        focusToggle.checked = enabled;
 
-    input.focus();
+        status.innerHTML =
+            enabled ? "● Active" : "● Inactive";
 
-});
+        status.style.color =
+            enabled ? "#ef4444" : "gray";
+    }
+);
