@@ -6,7 +6,9 @@
     "author": "Impana T",
     "permissions": [
         
-        "storage"
+        "storage",
+        "tabs"
+
     ],
     "action":{
         "default_popup": "index.html",

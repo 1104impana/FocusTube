@@ -109,9 +109,7 @@ focusToggle.addEventListener("change", () => {
     const enabled = focusToggle.checked;
 
     chrome.storage.local.set({
-
         focusEnabled: enabled
-
     }, () => {
 
         status.innerHTML =
@@ -127,11 +125,10 @@ focusToggle.addEventListener("change", () => {
             },
             (tabs) => {
 
-                if(
-    tabs.length &&
-    tabs[0].url &&
-    tabs[0].url.includes("youtube.com")
-){
+                if (
+                    tabs.length &&
+                    tabs[0].url.includes("youtube.com")
+                ) {
 
                     chrome.tabs.reload(tabs[0].id);
 
