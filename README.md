@@ -9,7 +9,11 @@ To solve this, I built **FocusTube** — a simple Chrome extension designed to h
 
 With a single click, you can enable **Focus Mode**, which hides distracting videos and recommendations, allowing you to concentrate only on educational content such as coding tutorials, GATE preparation lectures, aptitude training, and other study-related resources.
 
-<img width="975" height="430" alt="image" src="https://github.com/user-attachments/assets/8d01ba87-7a08-4ff4-aa20-1981be735027" />
+<img width="975" height="452" alt="image" src="https://github.com/user-attachments/assets/d2c8c71e-b15e-4b5e-b962-4349b5df2264" />
+
+<br><br>
+
+<img width="748" height="428" alt="image" src="https://github.com/user-attachments/assets/c769879c-b8a3-43d1-af4d-3420496e7540" />
 
 
 
