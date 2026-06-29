@@ -4,7 +4,11 @@
 body{
     width:300px;
 
-    background:#141516;
+    background: 
+    linear-gradient(to bottom, rgba(255, 1, 1, 0.315) 0%,rgba(232, 125, 125, 0) 50%)
+    #161616;
+
+    
     color:white;
 
     padding:10px;
@@ -50,7 +54,7 @@ body.light #themeBtn{
 }
 
 .subtitle{
-    color:#6b7280;
+    color:#a8a8a8;
     margin-top:-8px;
     margin-bottom:20px;
     font-family: Verdana, sans-serif

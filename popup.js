@@ -118,24 +118,29 @@ focusToggle.addEventListener("change", () => {
         status.style.color =
             enabled ? "#ef4444" : "gray";
 
-        chrome.tabs.query(
-            {
-                active: true,
-                currentWindow: true
-            },
-            (tabs) => {
+       chrome.tabs.query(
+    {
+        active: true,
+        currentWindow: true
+    },
+    (tabs) => {
 
-                if (
-                    tabs.length &&
-                    tabs[0].url.includes("youtube.com")
-                ) {
+        if (
+            tabs.length &&
+            tabs[0].url.includes("youtube.com")
+        ) {
 
-                    chrome.tabs.reload(tabs[0].id);
-
+            chrome.tabs.update(
+                tabs[0].id,
+                {
+                    url: "https://www.youtube.com/"
                 }
+            );
 
-            }
-        );
+        }
+
+    }
+);
 
     });
 
