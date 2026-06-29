@@ -1,4 +1,5 @@
-# FocusTube
+# FocusTube <img width="25" height="25" alt="image" src="https://github.com/user-attachments/assets/20f720e6-12b6-46d8-9163-50c3589f06cc" />
+
 
 Are you someone who studies from YouTube but often ends up getting distracted by recommended videos, trending content, Shorts, food vlogs, movie clips, or other entertainment suggestions?
 
@@ -7,6 +8,14 @@ I faced the same problem while preparing for exams and learning programming. Wha
 To solve this, I built **FocusTube** — a simple Chrome extension designed to help students stay focused while using YouTube for learning.
 
 With a single click, you can enable **Focus Mode**, which hides distracting videos and recommendations, allowing you to concentrate only on educational content such as coding tutorials, GATE preparation lectures, aptitude training, and other study-related resources.
+
+<img width="975" height="452" alt="image" src="https://github.com/user-attachments/assets/d2c8c71e-b15e-4b5e-b962-4349b5df2264" />
+
+<br><br>
+
+<img width="748" height="428" alt="image" src="https://github.com/user-attachments/assets/c769879c-b8a3-43d1-af4d-3420496e7540" />
+
+
 
 ### Features
 
