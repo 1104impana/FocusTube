@@ -29,6 +29,14 @@ With a single click, you can enable **Focus Mode**, which hides distracting vide
 * Create a cleaner learning environment on YouTube
 * Designed for students, developers, and competitive exam aspirants
 
+## Installation
+
+FocusTube is currently not available on the Chrome Web Store.
+
+👉 Follow the complete installation guide here:
+
+**[INSTALLATION.md](INSTALLATION.md)**
+
 ### Why FocusTube?
 
 YouTube is one of the best learning platforms available today, but its recommendation system is designed to maximize engagement, not productivity. FocusTube helps bridge that gap by giving users more control over what they see while studying.
