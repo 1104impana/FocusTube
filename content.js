@@ -14,7 +14,7 @@ chrome.storage.local.get(
 
         if(interests.length===0) return;
 
-        showNotification("FocusTube Active");
+        
 
         startFocusMode(interests);
 
@@ -25,40 +25,6 @@ chrome.storage.local.get(
     }
 );
 
-function showNotification(message) {
-
-    if (
-        document.getElementById(
-            "focusTubeBanner"
-        )
-    ) return;
-
-    const banner =
-        document.createElement("div");
-
-    banner.id = "focusTubeBanner";
-
-    banner.innerText = message;
-
-    banner.style.position = "fixed";
-    banner.style.top = "20px";
-    banner.style.right = "20px";
-    banner.style.zIndex = "99999";
-    banner.style.padding = "12px";
-    banner.style.background = "#ef4444";
-    banner.style.color = "white";
-    banner.style.borderRadius = "8px";
-    banner.style.fontWeight = "600";
-
-    document.body.appendChild(banner);
-
-    setTimeout(() => {
-
-        banner.remove();
-
-    }, 3000);
-
-}
 
 function startFocusMode(interests){
 
@@ -387,7 +353,9 @@ function blockSearchOverlay(interests,query){
 
                 "${query}"
 
-                isn't one of your interests.
+                isn't one of your study interests. <br>
+                Warning : Search bar disabled.
+                <br> Choose an interest below to continue your learning journey. 
 
             </p>
 
@@ -525,5 +493,31 @@ document.addEventListener("yt-navigate-finish", () => {
 
         }
     );
+
+});
+
+chrome.storage.onChanged.addListener((changes, area) => {
+
+    if (area !== "local") return;
+
+    if (
+        changes.interests ||
+        changes.focusEnabled
+    ) {
+
+        chrome.storage.local.get(
+            ["focusEnabled", "interests"],
+            (result) => {
+
+                if (!result.focusEnabled) return;
+
+                startFocusMode(
+                    result.interests || []
+                );
+
+            }
+        );
+
+    }
 
 });

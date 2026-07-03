@@ -118,6 +118,8 @@ focusToggle.addEventListener("change", () => {
         status.style.color =
             enabled ? "#ef4444" : "gray";
 
+       
+
        chrome.tabs.query(
     {
         active: true,
@@ -183,5 +185,6 @@ chrome.storage.local.get(
 
         status.style.color =
             enabled ? "#ef4444" : "gray";
+        
     }
 );
