@@ -13,8 +13,12 @@ With a single click, you can enable **Focus Mode**, which hides distracting vide
 
 <br><br>
 
-<img width="748" height="428" alt="image" src="https://github.com/user-attachments/assets/c769879c-b8a3-43d1-af4d-3420496e7540" />
+<img width="889" height="389" alt="image" src="https://github.com/user-attachments/assets/4c0a9d53-1560-44fd-bc3c-acb0846d20c1" />
 
+
+<br><br>
+
+<img width="900" height="400" alt="image" src="https://github.com/user-attachments/assets/ca87f100-fc18-4ff1-b68c-3bc55204c896" />
 
 
 ### Features
